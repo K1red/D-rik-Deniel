@@ -1,0 +1,441 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>RevOps &amp; Data Specialist Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-variant": "#333539",
+                        "surface-bright": "#37393e",
+                        "on-tertiary-container": "#3e2400",
+                        "on-surface-variant": "#c2c6d6",
+                        "inverse-on-surface": "#2f3035",
+                        "surface-tint": "#adc6ff",
+                        "on-secondary": "#003824",
+                        "tertiary-container": "#ca8100",
+                        "outline": "#8c909f",
+                        "on-background": "#e2e2e8",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "inverse-primary": "#005ac2",
+                        "on-error": "#690005",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary": "#adc6ff",
+                        "primary-container": "#4d8eff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container": "#1e2024",
+                        "secondary-container": "#00a572",
+                        "inverse-surface": "#e2e2e8",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#282a2e",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-lowest": "#0c0e12",
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface": "#e2e2e8",
+                        "surface": "#111317",
+                        "surface-container-highest": "#333539",
+                        "secondary": "#4edea3",
+                        "on-secondary-container": "#00311f",
+                        "tertiary": "#ffb95f",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-primary-fixed": "#001a42",
+                        "outline-variant": "#424754",
+                        "error-container": "#93000a",
+                        "on-primary": "#002e6a",
+                        "surface-dim": "#111317",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-low": "#1a1c20",
+                        "on-primary-fixed-variant": "#004395",
+                        "background": "#111317",
+                        "on-tertiary": "#472a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "xl": "40px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #09090B;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background-color: #18181B;
+            border: 1px solid #27272A;
+            backdrop-filter: blur(12px);
+        }
+        .glow-effect {
+            box-shadow: 0 0 24px rgba(77, 142, 255, 0.1);
+        }
+        .hover-glass:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-md font-bold text-on-surface dark:text-on-surface tracking-tight">
+                RevOps Specialist
+            </div>
+<div class="hidden md:flex items-center gap-lg">
+    <a class="nav-link font-label-sm text-label-sm uppercase tracking-wider px-2 py-1 rounded transition-all duration-300"
+       href="#sobre">Sobre</a>
+
+    <a class="nav-link font-label-sm text-label-sm uppercase tracking-wider px-2 py-1 rounded transition-all duration-300"
+       href="#servicos">Serviços</a>
+
+    <a class="nav-link font-label-sm text-label-sm uppercase tracking-wider px-2 py-1 rounded transition-all duration-300"
+       href="#portfolio">Portfólio</a>
+
+    <a class="nav-link font-label-sm text-label-sm uppercase tracking-wider px-2 py-1 rounded transition-all duration-300"
+       href="#contato">Contato</a>
+</div>
+<a href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Bom%20dia,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar."
+   target="_blank"
+   rel="noopener noreferrer"
+   class="bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider px-md py-sm rounded-lg transition-colors flex items-center gap-xs">
+    Falar Comigo
+    <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</button>
+</div>
+</nav>
+<main class="w-full px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto py-xl flex flex-col gap-xl">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center min-h-[70vh]">
+<div class="md:col-span-7 flex flex-col gap-md z-10">
+<div class="inline-flex items-center gap-xs bg-surface-variant/50 border border-outline-variant/30 px-3 py-1 rounded-full w-fit">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-mono-data text-mono-data text-secondary-fixed">Status: Operacional</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">Dérik Deniel<br>Interseção entre Negócios, <span class="text-primary-container">Dados</span> e Tecnologia
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Desenvolvendo soluções que ajudam a transformar dados e processos em informações úteis e decisões melhores. Especialista em estruturar arquiteturas analíticas de alta performance.
+                </p>
+<div class="flex gap-md mt-sm">
+<a href="Officer's Tools/index (1).html"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider px-lg py-md rounded-lg transition-colors">
+    Ver Projeto
+</a>
+                    </button>
+<a href="assets/curriculo.pdf"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="border border-outline-variant hover:bg-white/5 text-on-surface font-label-sm text-label-sm uppercase tracking-wider px-lg py-md rounded-lg transition-colors flex items-center gap-xs">
+    <span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+    Baixar CV
+</a>
+</div>
+</div>
+<div class="md:col-span-5 relative flex justify-center items-center">
+<div class="absolute inset-0 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="glass-card p-sm rounded-xl relative z-10 glow-effect w-full max-w-sm aspect-[3/4] overflow-hidden">
+<img alt="Profile Photo" class="w-full h-full object-cover rounded-lg filter grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaOT-ZLbAZH7K1J18ws9cVQKZfpHOZyjnJvJYQSexQ5yq_VfHZvFdv3Ph94cbo-NOkQEFMChmlaj5_ZQ7YiJWjRKRw_rd0iDBvUp8n62CaKtUSK1qkf1sTkYJVIB4suQeFHIL0ruFWXSFiDpsCdjvx9OBd1xKPoWSxtsVBoGJkHv46FfQeLsDD52myHidAoXOjjvSCb0nmQAJ3cYi60tdlnDlOZ0dgh_yZBHRF9MBzvjBNPsEejdvLhg-ho67jawgb">
+<!-- Floating Data Chips -->
+<div class="absolute bottom-6 left-[-20px] bg-surface-container border border-outline-variant px-3 py-2 rounded-lg flex items-center gap-2 shadow-lg backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px;">trending_up</span>
+<span class="font-mono-data text-xs text-on-surface">+100% Eficiência</span>
+</div>
+<div class="absolute top-10 right-[-20px] bg-surface-container border border-outline-variant px-3 py-2 rounded-lg flex items-center gap-2 shadow-lg backdrop-blur-md">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">database</span>
+<span class="font-mono-data text-xs text-on-surface">Data Pipelines</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Sobre Mim -->
+<section class="py-xl border-t border-outline-variant/20" id="sobre">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="col-span-1">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Sobre Mim</h2>
+<div class="h-1 w-12 bg-primary rounded"></div>
+</div>
+<div class="col-span-2 glass-card p-lg rounded-xl">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Atuo na interseção entre negócios, dados e tecnologia. Minha especialidade é estruturar operações de Revenue (RevOps) focadas em eficiência, construindo desde a infraestrutura de dados até dashboards executivos. Com forte background em Business Intelligence, Análise de Dados e Engenharia de Software, implemento soluções que automatizam fluxos complexos e utilizam Inteligência Artificial para predição de cenários, garantindo que a liderança tenha a informação certa, no momento exato.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Serviços Grid -->
+<section class="py-xl" id="servicos">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Serviços</h2>
+<div class="h-1 w-12 bg-primary rounded"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Service 1 -->
+<div class="glass-card p-lg rounded-xl hover:border-primary/50 transition-colors group flex flex-col gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary">strategy</span>
+</div>
+<div>
+<h3 class="font-headline-md text-lg font-semibold text-on-surface mb-xs">RevOps &amp; Inteligência Comercial</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Alinhamento de processos de vendas, marketing e CS para maximizar receita.</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="glass-card p-lg rounded-xl hover:border-secondary/50 transition-colors group flex flex-col gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+</div>
+<div>
+<h3 class="font-headline-md text-lg font-semibold text-on-surface mb-xs">Dados &amp; Analytics</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Modelagem de dados complexos, construção de pipelines e dashboards analíticos.</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="glass-card p-lg rounded-xl hover:border-tertiary/50 transition-colors group flex flex-col gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-tertiary transition-colors">
+<span class="material-symbols-outlined text-tertiary">code_blocks</span>
+</div>
+<div>
+<h3 class="font-headline-md text-lg font-semibold text-on-surface mb-xs">Automação &amp; Desenvolvimento</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Criação de ferramentas internas e automação de fluxos operacionais.</p>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="glass-card p-lg rounded-xl hover:border-primary-container/50 transition-colors group flex flex-col gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary-container">psychology</span>
+</div>
+<div>
+<h3 class="font-headline-md text-lg font-semibold text-on-surface mb-xs">Inteligência Artificial</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Implementação de modelos preditivos para otimização de decisões.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Bento Grid -->
+<section class="py-xl" id="portfolio">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Portfólio</h2>
+<div class="h-1 w-12 bg-primary rounded"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px]">
+<!-- Project 1 (Large) -->
+<div class="md:col-span-8 glass-card rounded-xl overflow-hidden group relative flex flex-col">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent z-10"></div>
+<img alt="Sistemas de Inteligência de Negócios" class="w-full h-full object-cover object-top opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105 transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs7YXb4D1r2AwVr9nY35F9UgZxcZQ3_9jd_DAVnobqgyBbi2J1wfpzKI1gH4QJ3LsxkiKNbEuGCX6u_yPYBriS2u9k9QHkTqA3utu-adedMdBgZllreKWJT_U5SF_5-dVa572JjYadDz3WlNkfMW63uO913hEQRjyI9YuO7ilNZiHTwcXF3c6zdklkljOyWOd4cwv9kUOabr5gejFequ5fUBVM7316YJPIUk9_u8ew3iqWZ_5F0INx3_ZtMv7kGiDY">
+<div class="absolute bottom-0 left-0 p-lg z-20 w-full">
+<div class="flex items-center gap-xs mb-sm">
+<span class="px-2 py-1 bg-surface-variant/80 backdrop-blur text-primary font-mono-data text-xs rounded border border-outline-variant/30">Analytics</span>
+<span class="px-2 py-1 bg-surface-variant/80 backdrop-blur text-on-surface font-mono-data text-xs rounded border border-outline-variant/30">RevOps</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface mb-xs group-hover:text-primary transition-colors">Sistemas de Inteligência de Negócios</h3>
+<p class="font-body-md text-sm text-on-surface-variant hidden md:block">Arquitetura de dados para monitoramento de KPIs comerciais em tempo real.</p>
+</div>
+</div>
+<!-- Project 2 (Square) -->
+<div class="md:col-span-4 glass-card rounded-xl overflow-hidden group relative flex flex-col">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent z-10"></div>
+<img alt="Predição Inteligente com IA" class="w-full h-full object-cover object-left opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105 transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDW0IRo_agM39vZr5za6fV9tIq9nNP5atNZm4I3t9XlCrCpySwpy6WCc7riYrVfOZCt7jU98s3p2p06ogmezQEVwZHkOUEHG-o5lgEqEQyi7NA4Yr05VpE8-IkqW81B0rJFaYhKSbM5HVX0lqxKiLAArCwdwAHpTYQsRjD5PNIczHCh-vKq2gLiLuOpkE6G9nC5gDAfxWeegPiIEPHKuKKGc31V_UdvRihPRJvgZJ31UZsJiboQt8DF0ndM1LMJym2">
+<div class="absolute bottom-0 left-0 p-lg z-20 w-full">
+<div class="flex items-center gap-xs mb-sm">
+<span class="px-2 py-1 bg-surface-variant/80 backdrop-blur text-tertiary font-mono-data text-xs rounded border border-outline-variant/30">IA</span>
+</div>
+<h3 class="font-headline-md text-lg font-bold text-on-surface mb-xs group-hover:text-tertiary transition-colors">Predição Inteligente com IA</h3>
+</div>
+</div>
+<!-- Project 3 (Wide) -->
+<div class="md:col-span-12 glass-card rounded-xl overflow-hidden group relative flex flex-col">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/50 to-transparent z-10"></div>
+<img alt="Dashboards Operacionais" class="w-full h-full object-cover object-top opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105 transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBnFMNvxuwMd7ObakmxPymn7sOBqS4uCVpzV_Lnv4uuWIh_nBbJC6h9xZyIw-CHKn3vAqRdDzvYk-69Wfsxm8bAp8vyF0YCImE8QXA0YvjtAVyLtzwSCb9efsX-AW-F5coAO9Op_3Xm0ShGi4xc0lNWBNAN9aeJAP4WSS6AZZxRo8RX_LXmHX_UXvRkJacXxWUI8BXGQh-1nPpxo-qvv1ISUS6JlqfNk73YV_MIcIuzqVHxAXp1LLybpVAG4hI5izN">
+<div class="absolute bottom-0 left-0 p-lg z-20 w-full flex justify-between items-end">
+<div>
+<div class="flex items-center gap-xs mb-sm">
+<span class="px-2 py-1 bg-surface-variant/80 backdrop-blur text-secondary font-mono-data text-xs rounded border border-outline-variant/30">Data Viz</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface mb-xs group-hover:text-secondary transition-colors">Dashboards Operacionais</h3>
+<p class="font-body-md text-sm text-on-surface-variant max-w-xl">Interfaces de acompanhamento de metas e performance de times corporativos.</p>
+</div>
+<button class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-surface-variant border border-outline-variant group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Como Eu Trabalho -->
+<section class="py-xl border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Como eu trabalho</h2>
+<div class="h-1 w-12 bg-primary rounded mb-lg"></div>
+<div class="flex flex-col gap-md relative before:absolute before:inset-y-0 before:left-3 before:w-px before:bg-outline-variant/30 pl-lg">
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Fase 1</h4>
+<h3 class="font-headline-md text-lg text-on-surface font-semibold">Problema</h3>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Mapeamento de gargalos operacionais e dores do negócio.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-surface border-2 border-primary flex items-center justify-center glow-effect">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-wider mb-xs">Fase 2</h4>
+<h3 class="font-headline-md text-lg text-on-surface font-semibold">Entendimento</h3>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Auditoria de dados, processos e desenho da arquitetura ideal.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-surface border-2 border-secondary flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Fase 3</h4>
+<h3 class="font-headline-md text-lg text-on-surface font-semibold">Solução</h3>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Implementação técnica, deploy e treinamento da operação.</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-lg rounded-xl flex flex-col justify-center">
+<h3 class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider border-b border-outline-variant/30 pb-sm mb-md">Capacidades Técnicas</h3>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-center gap-sm font-mono-data text-sm text-on-surface hover:text-primary transition-colors hover-glass p-2 rounded">
+<span class="material-symbols-outlined text-outline-variant text-base">check_box</span>
+                            Integração de sistemas complexos
+                        </li>
+<li class="flex items-center gap-sm font-mono-data text-sm text-on-surface hover:text-primary transition-colors hover-glass p-2 rounded">
+<span class="material-symbols-outlined text-outline-variant text-base">check_box</span>
+                            Automação de processos críticos
+                        </li>
+<li class="flex items-center gap-sm font-mono-data text-sm text-on-surface hover:text-primary transition-colors hover-glass p-2 rounded">
+<span class="material-symbols-outlined text-outline-variant text-base">check_box</span>
+                            Criação de dashboards gerenciais e executivos
+                        </li>
+<li class="flex items-center gap-sm font-mono-data text-sm text-on-surface hover:text-primary transition-colors hover-glass p-2 rounded">
+<span class="material-symbols-outlined text-outline-variant text-base">check_box</span>
+                            Desenvolvimento de ferramentas internas
+                        </li>
+<li class="flex items-center gap-sm font-mono-data text-sm text-on-surface hover:text-primary transition-colors hover-glass p-2 rounded">
+<span class="material-symbols-outlined text-outline-variant text-base">check_box</span>
+                            Soluções com Inteligência Artificial
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest full-width border-t border-outline-variant/20 py-lg mt-xl" id="contato">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-lg max-w-7xl mx-auto gap-md">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<div class="font-headline-md text-headline-md font-extrabold text-on-surface">Contato</div>
+<div class="font-body-md text-sm text-on-surface-variant">Dérik Deniel<br>Email: derikdenielalm@gmail.com</div>
+</div>
+<div class="flex items-center gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#"><br></a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors"
+   href="https://www.linkedin.com/in/d%C3%A9rik-almeida-5a421737a/"
+   target="_blank"
+   rel="noopener noreferrer">
+    LinkedIn
+</a>
+<a href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Bom%20dia,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar."
+   target="_blank"
+   rel="noopener noreferrer"
+   class="bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider px-md py-sm rounded-lg transition-colors flex items-center gap-xs">
+    Agendar uma call
+    <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</div>
+</div>
+</footer>
+
+
+<script>
+    const sections = document.querySelectorAll('#sobre, #servicos, #portfolio, #contato');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove(
+                        'text-primary',
+                        'border-b-2',
+                        'border-primary',
+                        'pb-1'
+                    );
+                    link.classList.add('text-on-surface-variant');
+                });
+
+                const activeLink = document.querySelector(
+                    `.nav-link[href="#${entry.target.id}"]`
+                );
+
+                if (activeLink) {
+                    activeLink.classList.remove('text-on-surface-variant');
+                    activeLink.classList.add(
+                        'text-primary',
+                        'border-b-2',
+                        'border-primary',
+                        'pb-1'
+                    );
+                }
+            }
+        });
+    }, {
+        threshold: 0.35
+    });
+
+    sections.forEach(section => observer.observe(section));
+</script>
+
+
+</body></html>
