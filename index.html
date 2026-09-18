@@ -1,775 +1,1622 @@
-<!DOCTYPE html><html class="dark scroll-smooth" lang="pt-BR" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
 <title>Dérik Deniel | RevOps, Dados, Automação e IA</title>
+
 <meta content="Soluções em RevOps, Data Analytics, automação e Inteligência Artificial para transformar processos, dados e operações." name="description">
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary-fixed-dim": "#adc6ff",
-                        "surface-variant": "#1c1f26",
-                        "surface-bright": "#222630",
-                        "on-tertiary-container": "#3e2400",
-                        "on-surface-variant": "#9ca3af",
-                        "inverse-on-surface": "#2f3035",
-                        "surface-tint": "#adc6ff",
-                        "on-secondary": "#003824",
-                        "tertiary-container": "#ca8100",
-                        "outline": "#4b5563",
-                        "outline-subtle": "#262930",
-                        "on-background": "#f3f4f6",
-                        "tertiary-fixed-dim": "#ffb95f",
-                        "inverse-primary": "#005ac2",
-                        "on-error": "#690005",
-                        "on-primary-container": "#dbeafe",
-                        "secondary-fixed-dim": "#4edea3",
-                        "primary": "#3b82f6",
-                        "primary-hover": "#2563eb",
-                        "primary-container": "#1d4ed8",
-                        "secondary": "#10b981",
-                        "secondary-container": "#059669",
-                        "inverse-surface": "#e2e2e8",
-                        "error": "#f87171",
-                        "surface-container-high": "#1a1d24",
-                        "surface-container-lowest": "#0c0e12",
-                        "primary-fixed": "#d8e2ff",
-                        "on-surface": "#f9fafb",
-                        "surface": "#111317",
-                        "surface-container": "#15181e",
-                        "tertiary": "#f59e0b",
-                        "surface-container-low": "#11141a",
-                        "background": "#0c0e12"
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                        mono: ["JetBrains Mono", "monospace"]
-                    }
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary-fixed-dim": "#adc6ff",
+                    "surface-variant": "#1c1f26",
+                    "surface-bright": "#222630",
+                    "on-tertiary-container": "#3e2400",
+                    "on-surface-variant": "#9ca3af",
+                    "inverse-on-surface": "#2f3035",
+                    "surface-tint": "#adc6ff",
+                    "on-secondary": "#003824",
+                    "tertiary-container": "#ca8100",
+                    "outline": "#4b5563",
+                    "outline-subtle": "#262930",
+                    "on-background": "#f3f4f6",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "inverse-primary": "#005ac2",
+                    "on-error": "#690005",
+                    "on-primary-container": "#dbeafe",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary": "#3b82f6",
+                    "primary-hover": "#2563eb",
+                    "primary-container": "#1d4ed8",
+                    "secondary": "#10b981",
+                    "secondary-container": "#059669",
+                    "inverse-surface": "#e2e2e8",
+                    "error": "#f87171",
+                    "surface-container-high": "#1a1d24",
+                    "surface-container-lowest": "#0c0e12",
+                    "primary-fixed": "#d8e2ff",
+                    "on-surface": "#f9fafb",
+                    "surface": "#111317",
+                    "surface-container": "#15181e",
+                    "tertiary": "#f59e0b",
+                    "surface-container-low": "#11141a",
+                    "background": "#0c0e12"
+                },
+                fontFamily: {
+                    sans: ["Inter", "sans-serif"],
+                    mono: ["JetBrains Mono", "monospace"]
                 }
             }
         }
-    </script>
-<style>
-        body {
-            background-color: #0c0e12;
-            color: #f3f4f6;
-            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
-            background-size: 28px 28px;
-        }
-        .tech-card {
-            background-color: #12151b;
-            border: 1px solid #232730;
-            transition: all 0.25s ease-in-out;
-        }
-        .tech-card:hover {
-            border-color: #3b82f688;
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.08);
-        }
-        .glow-accent {
-            box-shadow: 0 0 35px rgba(59, 130, 246, 0.15);
-        }
-        .glass-nav {
-            background-color: rgba(12, 14, 18, 0.85);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid #232730;
-        }
-    </style>
-</head>
-<body class="font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen flex flex-col">
-<!-- 2. NAVBAR -->
-<nav class="glass-nav sticky top-0 z-50 w-full transition-all">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-<!-- Logo / Marca -->
-<a class="flex flex-col group" href="#hero">
-<span class="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors flex items-center gap-2">
-<span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-                Dérik Deniel
-            </span>
-<span class="text-xs font-mono text-gray-400 tracking-wider">RevOps &amp; Data Specialist</span>
-</a>
-<!-- Desktop Links -->
-<div class="hidden md:flex items-center gap-7">
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#hero">Início</a>
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#servicos">Serviços</a>
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#projetos">Projetos</a>
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#como-funciona">Como funciona</a>
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#sobre">Sobre</a>
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#contato">Contato</a>
-</div>
-<!-- Desktop CTA -->
-<div class="hidden md:flex items-center gap-4">
-<a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold tracking-wide transition-all shadow-md shadow-blue-500/20 active:scale-95" href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es." rel="noopener noreferrer" target="_blank">
-                Falar comigo
-                <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
-</a>
-</div>
-<!-- Mobile Menu Toggle Button -->
-<div class="flex md:hidden">
-<button aria-label="Abrir Menu" class="p-2 text-gray-300 hover:text-white hover:bg-surface-variant rounded-lg border border-outline-subtle" id="mobile-menu-btn" type="button">
-<span class="material-symbols-outlined" id="menu-icon">menu</span>
-</button>
-</div>
-</div>
-<!-- Mobile Drawer Menu -->
-<div class="hidden md:hidden border-b border-outline-subtle bg-[#0c0e12]/95 px-6 py-5 flex-col gap-4" id="mobile-menu">
-<a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40" href="#hero">Início</a>
-<a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40" href="#servicos">Serviços</a>
-<a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40" href="#projetos">Projetos</a>
-<a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40" href="#como-funciona">Como funciona</a>
-<a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40" href="#sobre">Sobre</a>
-<a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5" href="#contato">Contato</a>
-<a class="mt-2 w-full inline-flex justify-center items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm" href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es." rel="noopener noreferrer" target="_blank">
-            Falar comigo
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</nav>
-<main class="flex-grow">
-<!-- 3. HERO SECTION -->
-<section class="relative pt-12 md:pt-20 pb-16 md:pb-24 overflow-hidden" id="hero">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-<!-- Coluna Texto -->
-<div class="lg:col-span-7 flex flex-col items-start gap-6">
-<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-variant/80 border border-outline-subtle text-xs font-mono text-blue-400">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        RevOps • Data &amp; Analytics • Automação • IA
-                    </div>
-<h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
-                        Transformo dados, processos e tecnologia em operações mais eficientes.
-                    </h1>
-<p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl font-normal">
-                        Estruturo soluções de RevOps, Dados, Automação e Inteligência Artificial para empresas que querem reduzir tarefas manuais, organizar informações e tomar decisões melhores.
-                    </p>
-<div class="flex flex-wrap items-center gap-4 pt-2">
-<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm tracking-wide transition-all shadow-lg shadow-blue-500/25" href="#servicos">
-                            Conhecer serviços
-                        </a>
-<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-outline-subtle bg-surface hover:bg-surface-variant text-gray-200 hover:text-white font-medium text-sm transition-all" href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es." rel="noopener noreferrer" target="_blank">
-                            Falar comigo
-                            <span class="material-symbols-outlined text-base">chat</span>
-</a>
-</div>
-</div>
-<!-- Coluna Imagem Perfil Real -->
-<div class="lg:col-span-5 flex justify-center relative">
-<div class="absolute -inset-4 bg-blue-500/10 blur-3xl rounded-full -z-10"></div>
-<div class="relative w-full max-w-sm rounded-2xl p-2.5 bg-gradient-to-b from-surface-variant/80 to-surface-container-lowest border border-outline-subtle shadow-2xl">
-<div class="relative overflow-hidden rounded-xl aspect-[3/4] bg-surface">
-<img alt="Dérik Deniel" class="w-full h-full object-cover object-center filter grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1V8g0miTyh8-LNugHf4zDH4UHRMeDWki38h0rb9jQ0CnK3ClblAVNfP0KFwH0F-BE2w1tJxKXj8udOlAEi3b3bs-eytCv8mFGgBCy7dGF_rFguJ5zxw9999-U6HIzaS-8FqiOROY2MGPVoIgf49BmvDrDgGEQshbrQ2JWO37v5DwZmpBhDQxBLNCo66FEsiVbzc4Wn02oSWSvab7uzruaW26yhamQg5BpFO24fZbk8vX1goFwdOw3Dz0KoMlHzCE30_bRSCrCkj2Q">
-<!-- Badges sóbrios -->
-<div class="absolute top-4 right-4 bg-[#0c0e12]/85 backdrop-blur border border-outline-subtle px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-lg">
-<span class="material-symbols-outlined text-blue-400 text-base">analytics</span>
-<span class="text-xs font-mono font-medium text-gray-200">RevOps &amp; BI</span>
-</div>
-<div class="absolute bottom-4 left-4 bg-[#0c0e12]/85 backdrop-blur border border-outline-subtle px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-lg">
-<span class="material-symbols-outlined text-emerald-400 text-base">account_tree</span>
-<span class="text-xs font-mono font-medium text-gray-200">Data Architecture</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 4. O QUE EU RESOLVO -->
-<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="max-w-3xl mb-14">
-<div class="inline-flex items-center gap-2 text-xs font-mono text-blue-400 mb-2 uppercase tracking-widest">
-<span class="">Diagnóstico e Foco</span>
-</div>
-<h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight">O que eu resolvo</h2>
-<p class="text-lg font-medium text-blue-400 mt-2">Tecnologia só faz sentido quando resolve um problema.</p>
-<p class="text-sm sm:text-base text-gray-400 mt-2 leading-relaxed">
-                    Identifico gargalos, estruturo os dados e desenvolvo soluções que tornam operações mais eficientes e decisões mais inteligentes.
-                </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Card 1 -->
-<div class="tech-card p-6 rounded-xl flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-<span class="material-symbols-outlined text-2xl">sync_disabled</span>
-</div>
-<h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">Processos Manuais</h3>
-<p class="text-sm text-gray-300 leading-relaxed">Automatize tarefas repetitivas e reduza trabalho operacional.</p>
-</div>
-<!-- Card 2 -->
-<div class="tech-card p-6 rounded-xl flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-<span class="material-symbols-outlined text-2xl">dataset</span>
-</div>
-<h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">Dados Desorganizados</h3>
-<p class="text-sm text-gray-300 leading-relaxed">Transforme múltiplas fontes de dados em uma estrutura confiável.</p>
-</div>
-<!-- Card 3 -->
-<div class="tech-card p-6 rounded-xl flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-<span class="material-symbols-outlined text-2xl">visibility_off</span>
-</div>
-<h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">Falta de Visibilidade</h3>
-<p class="text-sm text-gray-300 leading-relaxed">Tenha indicadores e dashboards para acompanhar a operação.</p>
-</div>
-<!-- Card 4 -->
-<div class="tech-card p-6 rounded-xl flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-<span class="material-symbols-outlined text-2xl">psychology</span>
-</div>
-<h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">Decisões Complexas</h3>
-<p class="text-sm text-gray-300 leading-relaxed">Use automação e IA para apoiar análises e decisões.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- 5. SERVIÇOS -->
-<section class="py-20 border-t border-outline-subtle/50" id="servicos">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-<div>
-<span class="text-xs font-mono text-blue-400 uppercase tracking-widest">Catálogo de Competências</span>
-<h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Serviços</h2>
-</div>
-<p class="text-sm text-gray-400 max-w-md">Soluções estruturadas para transformar a dinâmica operacional de times analíticos e comerciais.</p>
-</div>
-<!-- Grid com Accordion Integrado -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="services-accordion-group">
-<!-- Categoria 1 -->
-<div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between gap-3 mb-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-<span class="material-symbols-outlined">trending_up</span>
-</div>
-<h3 class="font-bold text-lg text-white">RevOps &amp; Inteligência Comercial</h3>
-</div>
-<span class="text-xs font-mono text-gray-500">01</span>
-</div>
-<p class="text-sm text-gray-300 leading-relaxed mb-5">
-                            Estruturação de processos comerciais, CRM e indicadores para tornar a operação mais organizada e previsível.
-                        </p>
-</div>
-<div class="border-t border-outline-subtle pt-4">
-<span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">Escopo de atuação:</span>
-<div class="flex flex-wrap gap-2">
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Estruturação de processos comerciais</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">CRM e organização de pipeline</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Indicadores de vendas</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Funil comercial</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Automação de processos</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Integração Marketing, Vendas e CS</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Dashboards comerciais</span>
-</div>
-</div>
-</div>
-<!-- Categoria 2 -->
-<div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between gap-3 mb-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-<span class="material-symbols-outlined">bar_chart</span>
-</div>
-<h3 class="font-bold text-lg text-white">Dados &amp; Analytics</h3>
-</div>
-<span class="text-xs font-mono text-gray-500">02</span>
-</div>
-<p class="text-sm text-gray-300 leading-relaxed mb-5">
-                            Transformo dados espalhados em informações confiáveis para acompanhamento e tomada de decisão.
-                        </p>
-</div>
-<div class="border-t border-outline-subtle pt-4">
-<span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">Escopo de atuação:</span>
-<div class="flex flex-wrap gap-2">
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Decisões Inteligentes</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Dashboards executivos</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Modelagem de dados</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">ETL / ELT</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Integração de fontes</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">SQL</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Automação de relatórios</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">KPIs</span>
-</div>
-</div>
-</div>
-<!-- Categoria 3 -->
-<div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between gap-3 mb-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-<span class="material-symbols-outlined">terminal</span>
-</div>
-<h3 class="font-bold text-lg text-white">Automação &amp; Desenvolvimento</h3>
-</div>
-<span class="text-xs font-mono text-gray-500">03</span>
-</div>
-<p class="text-sm text-gray-300 leading-relaxed mb-5">
-                            Desenvolvo ferramentas e automações sob medida para eliminar tarefas repetitivas e melhorar processos internos.
-                        </p>
-</div>
-<div class="border-t border-outline-subtle pt-4">
-<span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">Escopo de atuação:</span>
-<div class="flex flex-wrap gap-2">
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Automação de processos</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Sistemas internos</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Aplicações web</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Integrações via API</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Ferramentas operacionais</span>
-
-</div>
-</div>
-</div>
-<!-- Categoria 4 -->
-<div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between gap-3 mb-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-<span class="material-symbols-outlined">neurology</span>
-</div>
-<h3 class="font-bold text-lg text-white">Inteligência Artificial</h3>
-</div>
-<span class="text-xs font-mono text-gray-500">04</span>
-</div>
-<p class="text-sm text-gray-300 leading-relaxed mb-5">
-                            Aplicação prática de IA para automatizar tarefas, analisar informações e apoiar decisões.
-                        </p>
-</div>
-<div class="border-t border-outline-subtle pt-4">
-<span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">Escopo de atuação:</span>
-<div class="flex flex-wrap gap-2">
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Automação com IA</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Agentes e assistentes</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Análise inteligente de dados</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Classificação de informações</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Modelos preditivos</span>
-<span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">Integração de IA em processos</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card Final de Fechamento -->
-<div class="mt-8 p-6 md:p-8 rounded-xl bg-gradient-to-r from-surface-variant to-surface border border-outline-subtle flex flex-col sm:flex-row items-center justify-between gap-6">
-<div>
-<h4 class="text-base sm:text-lg font-bold text-white">Não encontrou exatamente o que procura?</h4>
-<p class="text-sm text-gray-300 mt-1">Posso estruturar uma solução sob medida para o seu problema.</p>
-</div>
-<a class="whitespace-nowrap inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-md shadow-blue-500/20" href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es." rel="noopener noreferrer" target="_blank">Fale comigo<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</section>
-<!-- 6. PROJETOS / CASES -->
-<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]" id="projetos">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="mb-14">
-<span class="text-xs font-mono text-blue-400 uppercase tracking-widest">Portfólio em Produção</span>
-<h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Projetos</h2>
-<p class="text-sm sm:text-base text-gray-400 mt-2">Casos de engenharia de dados, visualização analítica e inteligência aplicada.</p>
-</div>
-
-<!--
-  ============================================================
-  LINKS DOS PROJETOS
-  ============================================================
-  Quando as páginas dos projetos estiverem prontas, troque
-  apenas o texto dentro das aspas pelo link correspondente.
-
-  Exemplo:
-  "Sistemas de Inteligência de Negócios": "https://seusite.com/projeto-1"
--->
-<script>
-const PROJECT_LINKS = {
-  "Sistemas de Inteligência de Negócios": "Cole o link aqui",
-  "Predição Inteligente com IA": "Cole o link aqui",
-  "Dashboards Operacionais": "Cole o link aqui"
-};
-
-function openProject(projectName) {
-  const url = PROJECT_LINKS[projectName];
-
-  if (!url || url === "Cole o link aqui") {
-    return;
-  }
-
-  window.open(url, "_blank", "noopener,noreferrer");
-}
+    }
 </script>
 
-<!-- Layout em Grid Compacto e Elegante -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<style>
+    body {
+        background-color: #0c0e12;
+        color: #f3f4f6;
+        background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+        background-size: 28px 28px;
+    }
 
-<!-- Card 1 -->
-<div class="tech-card rounded-xl overflow-hidden border border-outline-subtle flex flex-col group cursor-pointer"
-     onclick="openProject('Sistemas de Inteligência de Negócios')"
-     role="button" tabindex="0"
-     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('Sistemas de Inteligência de Negócios')}">
-<div class="relative overflow-hidden bg-black/40">
-<img alt="Sistemas de Inteligência de Negócios" class="w-full h-56 object-cover object-top rounded-t-xl opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XdBYfL37gmf0_lJMnq5i-svlgV4B2MDkw5Rj8d6cp46zOkLvoZbEBoPmK0A51t6Qt2JzJFlLsjJOEMi_juEatPvhHc_mHKxEoE4Pqj2sNKDQbXgU6WlLSTQ4QctRKMnYbmxxZyQpZOAFE_iHXCdkdK4lGZ1FtUZn4E6lKDT_IbXsQB61GX0Whd2SBgoPyuAQBaToREl6PdSJiGNdaXoFzHS8b8VcVDcmLE863qZURtxt7k2Ny-mvvPqbr9KRaTMDL7PySZdQgx">
-<div class="absolute inset-0 bg-gradient-to-t from-[#12151b] via-transparent to-transparent opacity-60"></div>
-</div>
-<div class="p-6 flex flex-col flex-grow justify-between">
-<div>
-<div class="flex items-center gap-2 mb-3">
-<span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20">Analytics</span>
-<span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">RevOps</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Sistemas de Inteligência de Negócios</h3>
-<p class="text-sm text-gray-300 leading-relaxed">Arquitetura de dados para monitoramento de KPIs comerciais em tempo real.</p>
-</div>
-<div class="flex-shrink-0">
-<div class="w-10 h-10 rounded-lg bg-surface border border-outline-subtle flex items-center justify-center text-gray-300 group-hover:text-white group-hover:border-blue-500/50 transition-colors">
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</div>
-</div>
-</div>
+    .tech-card {
+        background-color: #12151b;
+        border: 1px solid #232730;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .tech-card:hover {
+        border-color: #3b82f688;
+        box-shadow: 0 8px 30px rgba(59, 130, 246, 0.08);
+    }
+
+    .glow-accent {
+        box-shadow: 0 0 35px rgba(59, 130, 246, 0.15);
+    }
+
+    .glass-nav {
+        background-color: rgba(12, 14, 18, 0.85);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid #232730;
+    }
+</style>
+
+</head>
+
+<body class="font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen flex flex-col">
+
+<!-- NAVBAR -->
+
+<nav class="glass-nav sticky top-0 z-50 w-full transition-all">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+    <a class="flex flex-col group" href="#hero">
+
+        <span class="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+            Dérik Deniel
+        </span>
+
+        <span class="text-xs font-mono text-gray-400 tracking-wider">
+            RevOps & Data Specialist
+        </span>
+
+    </a>
+
+    <div class="hidden md:flex items-center gap-7">
+
+        <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#hero">
+            Início
+        </a>
+
+        <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#servicos">
+            Serviços
+        </a>
+
+        <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#projetos">
+            Projetos
+        </a>
+
+        <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#como-funciona">
+            Como funciona
+        </a>
+
+        <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#sobre">
+            Sobre
+        </a>
+
+        <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#contato">
+            Contato
+        </a>
+
+    </div>
+
+    <div class="hidden md:flex items-center gap-4">
+
+        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold tracking-wide transition-all shadow-md shadow-blue-500/20 active:scale-95"
+           href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es."
+           rel="noopener noreferrer"
+           target="_blank">
+
+            Falar comigo
+
+            <span class="material-symbols-outlined text-sm font-bold">
+                arrow_forward
+            </span>
+
+        </a>
+
+    </div>
+
+    <div class="flex md:hidden">
+
+        <button aria-label="Abrir Menu"
+                class="p-2 text-gray-300 hover:text-white hover:bg-surface-variant rounded-lg border border-outline-subtle"
+                id="mobile-menu-btn"
+                type="button">
+
+            <span class="material-symbols-outlined" id="menu-icon">
+                menu
+            </span>
+
+        </button>
+
+    </div>
+
 </div>
 
-<!-- Card 2 -->
-<div class="tech-card rounded-xl overflow-hidden border border-outline-subtle flex flex-col group cursor-pointer"
-     onclick="openProject('Predição Inteligente com IA')"
-     role="button" tabindex="0"
-     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('Predição Inteligente com IA')}">
-<div class="relative overflow-hidden bg-black/40">
-<img alt="Predição Inteligente com IA" class="w-full h-56 object-cover object-top rounded-t-xl opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1WQFoBDJmfCMdjk5eStpAgvF3D30TuRJjj7PSky6j84QPFdMa4te9ssuFO4t5BoXrYXQ0xVEc9-uKr7MwMuHadvLWMPQoXsJpKx-aza6rtc4Yy4Rta0kW7elO5-pPHDxNUPLcxbVsUH2o7t4nencG8keqM5NNFyhfWVsU9Gwi5ZVWjXJnMJ35jYndgOGajaYWvpzCQVuAceocXSSc2YnkKBdR4PqSlOUgXhYxPGrTg1kQO41gDGqdiIn70PZg7FUMzgdpTtB-vy">
-<div class="absolute inset-0 bg-gradient-to-t from-[#12151b] via-transparent to-transparent opacity-60"></div>
-</div>
-<div class="p-6 flex flex-col flex-grow justify-between">
-<div>
-<div class="flex items-center gap-2 mb-3">
-<span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">IA</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Predição Inteligente com IA</h3>
-<p class="text-sm text-gray-300 leading-relaxed">Modelos preditivos para transformar dados históricos em insights para tomada de decisão.</p>
-</div>
-<div class="flex-shrink-0">
-<div class="w-10 h-10 rounded-lg bg-surface border border-outline-subtle flex items-center justify-center text-gray-300 group-hover:text-white group-hover:border-blue-500/50 transition-colors">
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</div>
-</div>
-</div>
-</div>
+<div class="hidden md:hidden border-b border-outline-subtle bg-[#0c0e12]/95 px-6 py-5 flex-col gap-4"
+     id="mobile-menu">
 
-<!-- Card 3 (Span 2 colunas) -->
-<div class="tech-card rounded-xl overflow-hidden border border-outline-subtle flex flex-col group cursor-pointer lg:col-span-2"
-     onclick="openProject('Dashboards Operacionais')"
-     role="button" tabindex="0"
-     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject('Dashboards Operacionais')}">
-<div class="relative overflow-hidden bg-black/40">
-<img alt="Dashboards Operacionais" class="w-full h-64 object-cover object-top rounded-t-xl opacity-90 group-hover:opacity-100 group-hover:scale-[1.01] transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XR2VqrGFpebEuWw7lN5kkrdNVFmqT3D5ENTM5hhtuWWbEtjwFQgp6L4cEV8JAyXVuUOb3FyffTAmxdMp2Bw-4dGJ37kTRLgulwM7x5BskYrkp3Dtbs8yikytk3fMIB5pACnbBK91DDOXy1wMEAUPPi_ciYr2PS9j2Z5Wd6YtnCOrF2oDf5kMfbz-d9ys923st83bhAkfribO_UBZANrzFhRP96qHF0J5tgwtGOA2fWszy8z16ex5XkGWFd9oEGcOcLKuZrEiuPgA">
-<div class="absolute inset-0 bg-gradient-to-t from-[#12151b] via-transparent to-transparent opacity-60"></div>
-</div>
-<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-<div>
-<div class="flex items-center gap-2 mb-3">
-<span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Data Viz</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">Dashboards Operacionais</h3>
-<p class="text-sm text-gray-300 leading-relaxed">Interfaces de acompanhamento de metas e performance de times corporativos.</p>
-</div>
-<div class="flex-shrink-0">
-<div class="w-10 h-10 rounded-lg bg-surface border border-outline-subtle flex items-center justify-center text-gray-300 group-hover:text-white group-hover:border-blue-500/50 transition-colors">
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</div>
-</div>
-</div>
-</div>
+    <a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40"
+       href="#hero">
+        Início
+    </a>
+
+    <a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40"
+       href="#servicos">
+        Serviços
+    </a>
+
+    <a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40"
+       href="#projetos">
+        Projetos
+    </a>
+
+    <a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40"
+       href="#como-funciona">
+        Como funciona
+    </a>
+
+    <a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5 border-b border-outline-subtle/40"
+       href="#sobre">
+        Sobre
+    </a>
+
+    <a class="mobile-nav-link text-base font-medium text-gray-200 py-1.5"
+       href="#contato">
+        Contato
+    </a>
+
+    <a class="mt-2 w-full inline-flex justify-center items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm"
+       href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es."
+       rel="noopener noreferrer"
+       target="_blank">
+
+        Falar comigo
+
+        <span class="material-symbols-outlined text-sm">
+            arrow_forward
+        </span>
+
+    </a>
 
 </div>
-</div>
-</section>
-<!-- 7. COMO EU TRABALHO -->
-<section class="py-20 border-t border-outline-subtle/50" id="como-funciona">
+
+</nav>
+
+<main class="flex-grow">
+
+<!-- HERO -->
+
+<section class="relative pt-12 md:pt-20 pb-16 md:pb-24 overflow-hidden" id="hero">
+
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="max-w-3xl mb-14">
-<span class="text-xs font-mono text-blue-400 uppercase tracking-widest">Método de Execução</span>
-<h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Como eu trabalho</h2>
-<p class="text-sm sm:text-base text-gray-400 mt-2">Um fluxo claro e direto para estruturar soluções escaláveis sem complexidade desnecessária.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-<!-- Etapa 1 -->
-<div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
-<div>
-<div class="text-xs font-mono text-blue-400 font-bold tracking-wider mb-2">01 — DIAGNÓSTICO</div>
-<h3 class="text-lg font-semibold text-white mb-2">Diagnóstico</h3>
-<p class="text-sm text-gray-300 leading-relaxed">
-                            Entendo o problema, os objetivos e os gargalos da operação.
-                        </p>
-</div>
-<div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
-<span class="material-symbols-outlined text-sm text-blue-400">search</span> Mapeamento &amp; Requisitos
-                    </div>
-</div>
-<!-- Etapa 2 -->
-<div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
-<div>
-<div class="text-xs font-mono text-emerald-400 font-bold tracking-wider mb-2">02 — ARQUITETURA</div>
-<h3 class="text-lg font-semibold text-white mb-2">Arquitetura</h3>
-<p class="text-sm text-gray-300 leading-relaxed">
-                            Analiso dados, processos e ferramentas e desenho a solução.
-                        </p>
-</div>
-<div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
-<span class="material-symbols-outlined text-sm text-emerald-400">schema</span> Modelagem &amp; Fluxos
-                    </div>
-</div>
-<!-- Etapa 3 -->
-<div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
-<div>
-<div class="text-xs font-mono text-amber-400 font-bold tracking-wider mb-2">03 — IMPLEMENTAÇÃO</div>
-<h3 class="text-lg font-semibold text-white mb-2">Implementação</h3>
-<p class="text-sm text-gray-300 leading-relaxed">
-                            Desenvolvo, integro, automatizo e coloco a solução em operação.
-                        </p>
-</div>
-<div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
-<span class="material-symbols-outlined text-sm text-amber-400">code</span> Build &amp; Deploy
-                    </div>
-</div>
-<!-- Etapa 4 -->
-<div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
-<div>
-<div class="text-xs font-mono text-indigo-400 font-bold tracking-wider mb-2">04 — EVOLUÇÃO</div>
-<h3 class="text-lg font-semibold text-white mb-2">Evolução</h3>
-<p class="text-sm text-gray-300 leading-relaxed">
-                            Acompanho a utilização e identifico oportunidades de melhoria.
-                        </p>
-</div>
-<div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
-<span class="material-symbols-outlined text-sm text-indigo-400">published_with_changes</span> Otimização Contínua
-                    </div>
-</div>
-</div>
-</div>
-</section>
-<!-- 8. TECNOLOGIAS -->
-<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="max-w-3xl mb-12">
-<span class="text-xs font-mono text-blue-400 uppercase tracking-widest">Stack &amp; Ecossistema</span>
-<h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Tecnologias</h2>
-<p class="text-sm sm:text-base text-gray-400 mt-2">Tecnologias que utilizo para transformar complexidade em ferramentas funcionais.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Grupo 1 -->
-<div class="tech-card p-6 rounded-xl">
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-blue-400">database</span>
-<h3 class="font-bold text-base text-white">Dados</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Power BI</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">SQL</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Python</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">ETL</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">APIs</span>
-</div>
-</div>
-<!-- Grupo 2 -->
-<div class="tech-card p-6 rounded-xl">
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-emerald-400">smart_toy</span>
-<h3 class="font-bold text-base text-white">Automação</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Google Apps Script</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">N8N</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">APIs</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Workflows</span>
-</div>
-</div>
-<!-- Grupo 3 -->
-<div class="tech-card p-6 rounded-xl">
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-amber-400">code</span>
-<h3 class="font-bold text-base text-white">Desenvolvimento</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">HTML</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">CSS</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">JavaScript</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Python</span>
-</div>
-</div>
-<!-- Grupo 4 -->
-<div class="tech-card p-6 rounded-xl">
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-indigo-400">psychology</span>
-<h3 class="font-bold text-base text-white">Inteligência Artificial</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">LLMs</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Automação com IA</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Agentes</span>
-<span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">Análise inteligente</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 9. SOBRE MIM -->
-<section class="py-20 border-t border-outline-subtle/50" id="sobre">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-<div class="lg:col-span-4 flex justify-center">
-<div class="w-56 sm:w-64 aspect-[3/4] rounded-xl overflow-hidden border border-outline-subtle bg-surface shadow-lg">
-<img alt="Dérik Deniel - Sobre Mim" class="w-full h-full object-cover grayscale contrast-105" src="https://lh3.googleusercontent.com/aida/AEtjO1V8g0miTyh8-LNugHf4zDH4UHRMeDWki38h0rb9jQ0CnK3ClblAVNfP0KFwH0F-BE2w1tJxKXj8udOlAEi3b3bs-eytCv8mFGgBCy7dGF_rFguJ5zxw9999-U6HIzaS-8FqiOROY2MGPVoIgf49BmvDrDgGEQshbrQ2JWO37v5DwZmpBhDQxBLNCo66FEsiVbzc4Wn02oSWSvab7uzruaW26yhamQg5BpFO24fZbk8vX1goFwdOw3Dz0KoMlHzCE30_bRSCrCkj2Q">
-</div>
-</div>
-<div class="lg:col-span-8">
-<span class="text-xs font-mono text-blue-400 uppercase tracking-widest"></span>
-<h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1 mb-6">Sobre mim</h2>
-<p class="text-base sm:text-lg text-gray-300 leading-relaxed font-normal mb-8">
-                        Sou Dérik Deniel, profissional focado na interseção entre negócios, dados e tecnologia. Meu trabalho consiste em entender problemas operacionais, estruturar dados e desenvolver soluções que tornam processos mais eficientes e informações mais úteis para a tomada de decisão. Minha atuação combina RevOps, Business Intelligence, análise de dados, automação, desenvolvimento e Inteligência Artificial.
-                    </p>
-<div class="flex flex-wrap items-center gap-4">
-<a class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-md shadow-blue-500/20" href="Assets/curriculo.pdf" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-base">download</span>
-                            Baixar CV
-                        </a>
-<a class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-outline-subtle bg-surface hover:bg-surface-variant text-gray-200 hover:text-white font-medium text-sm transition-all" href="https://www.linkedin.com/in/d%C3%A9rik-almeida-5a421737a/" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-base">open_in_new</span>
-                            LinkedIn
-                        </a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 10. CTA FINAL & CONTATO -->
-<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]" id="contato">
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-<span class="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2">Inicie uma conversa</span>
-<h2 class="text-2xl sm:text-4xl lg:text-4xl font-extrabold text-white tracking-tight">
-                Vamos transformar um problema em uma solução?
-            </h2>
-<p class="text-base sm:text-lg text-gray-300 mt-4 max-w-2xl leading-relaxed">
-                Se você possui um processo manual, dados desorganizados ou uma operação que poderia ser mais eficiente, podemos conversar.
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <div class="lg:col-span-7 flex flex-col items-start gap-6">
+
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-variant/80 border border-outline-subtle text-xs font-mono text-blue-400">
+
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+
+                RevOps • Data & Analytics • Automação • IA
+
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+
+                Transformo dados, processos e tecnologia em operações mais eficientes.
+
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl font-normal">
+
+                Estruturo soluções de RevOps, Dados, Automação e Inteligência Artificial para empresas que querem reduzir tarefas manuais, organizar informações e tomar decisões melhores.
+
             </p>
-<div class="flex flex-wrap justify-center items-center gap-4 mt-8 w-full max-w-md">
-<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-all shadow-lg shadow-emerald-600/20" href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es." rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-base">chat</span>
-                    Fale comigo pelo WhatsApp
-                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-outline-subtle bg-surface hover:bg-surface-variant text-gray-200 hover:text-white font-medium text-sm transition-all" href="mailto:derikdenielalm@gmail.com?subject=Quero%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o&body=Ol%C3%A1%2C%20D%C3%A9rik%21%0A%0AVi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o.">
-<span class="material-symbols-outlined text-base">mail</span>
-                    Envie um e-mail<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-<div class="mt-8 pt-6 border-t border-outline-subtle/60 flex items-center gap-2 text-sm text-gray-400 font-mono">
-<span class="material-symbols-outlined text-sm text-gray-500">alternate_email</span>
-<a class="hover:text-blue-400 transition-colors" href="mailto:derikdenielalm@gmail.com?subject=Quero%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o&body=Ol%C3%A1%2C%20D%C3%A9rik%21%0A%0AVi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o.">derikdenielalm@gmail.com</a>
-</div>
-</div>
-</section>
-</main>
-<!-- 11. FOOTER -->
-<footer class="border-t border-outline-subtle bg-[#080a0d] py-10">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="flex flex-col items-center md:items-start gap-1">
-<span class="text-base font-bold text-white tracking-tight">Dérik Deniel</span>
-<span class="text-xs font-mono text-gray-400">RevOps • Data &amp; Analytics • Automação • IA</span>
-</div>
-<div class="flex items-center gap-6 text-sm text-gray-400 font-mono">
-<a class="hover:text-white transition-colors" href="mailto:derikdenielalm@gmail.com?subject=Quero%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o&body=Ol%C3%A1%2C%20D%C3%A9rik%21%0A%0AVi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o.">E-mail</a>
-<a class="hover:text-white transition-colors" href="https://www.linkedin.com/in/d%C3%A9rik-almeida-5a421737a/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a class="hover:text-white transition-colors" href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es." rel="noopener noreferrer" target="_blank">WhatsApp</a>
-</div>
-<div class="text-xs text-gray-400 font-mono">
-            © 2026 Dérik Deniel. Todos os direitos reservados.
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+
+                <a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm tracking-wide transition-all shadow-lg shadow-blue-500/25"
+                   href="#servicos">
+
+                    Conhecer serviços
+
+                </a>
+
+                <a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-outline-subtle bg-surface hover:bg-surface-variant text-gray-200 hover:text-white font-medium text-sm transition-all"
+                   href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es."
+                   rel="noopener noreferrer"
+                   target="_blank">
+
+                    Falar comigo
+
+                    <span class="material-symbols-outlined text-base">
+                        chat
+                    </span>
+
+                </a>
+
+            </div>
+
         </div>
+
+        <div class="lg:col-span-5 flex justify-center relative">
+
+            <div class="absolute -inset-4 bg-blue-500/10 blur-3xl rounded-full -z-10"></div>
+
+            <div class="relative w-full max-w-sm rounded-2xl p-2.5 bg-gradient-to-b from-surface-variant/80 to-surface-container-lowest border border-outline-subtle shadow-2xl">
+
+                <div class="relative overflow-hidden rounded-xl aspect-[3/4] bg-surface">
+
+                    <img alt="Dérik Deniel"
+                         class="w-full h-full object-cover object-center filter grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-700"
+                         src="./Assets/Eu.png">
+
+                    <div class="absolute top-4 right-4 bg-[#0c0e12]/85 backdrop-blur border border-outline-subtle px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-lg">
+
+                        <span class="material-symbols-outlined text-blue-400 text-base">
+                            analytics
+                        </span>
+
+                        <span class="text-xs font-mono font-medium text-gray-200">
+                            RevOps & BI
+                        </span>
+
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 bg-[#0c0e12]/85 backdrop-blur border border-outline-subtle px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-lg">
+
+                        <span class="material-symbols-outlined text-emerald-400 text-base">
+                            account_tree
+                        </span>
+
+                        <span class="text-xs font-mono font-medium text-gray-200">
+                            Data Architecture
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
+
+</section>
+
+<!-- O QUE EU RESOLVO -->
+
+<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-3xl mb-14">
+
+        <div class="inline-flex items-center gap-2 text-xs font-mono text-blue-400 mb-2 uppercase tracking-widest">
+            Diagnóstico e Foco
+        </div>
+
+        <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight">
+            O que eu resolvo
+        </h2>
+
+        <p class="text-lg font-medium text-blue-400 mt-2">
+            Tecnologia só faz sentido quando resolve um problema.
+        </p>
+
+        <p class="text-sm sm:text-base text-gray-400 mt-2 leading-relaxed">
+
+            Identifico gargalos, estruturo os dados e desenvolvo soluções que tornam operações mais eficientes e decisões mais inteligentes.
+
+        </p>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="tech-card p-6 rounded-xl flex flex-col gap-4">
+
+            <div class="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+
+                <span class="material-symbols-outlined text-2xl">
+                    sync_disabled
+                </span>
+
+            </div>
+
+            <h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">
+                Processos Manuais
+            </h3>
+
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Automatize tarefas repetitivas e reduza trabalho operacional.
+            </p>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl flex flex-col gap-4">
+
+            <div class="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+
+                <span class="material-symbols-outlined text-2xl">
+                    dataset
+                </span>
+
+            </div>
+
+            <h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">
+                Dados Desorganizados
+            </h3>
+
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Transforme múltiplas fontes de dados em uma estrutura confiável.
+            </p>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl flex flex-col gap-4">
+
+            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+
+                <span class="material-symbols-outlined text-2xl">
+                    visibility_off
+                </span>
+
+            </div>
+
+            <h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">
+                Falta de Visibilidade
+            </h3>
+
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Tenha indicadores e dashboards para acompanhar a operação.
+            </p>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl flex flex-col gap-4">
+
+            <div class="w-12 h-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+
+                <span class="material-symbols-outlined text-2xl">
+                    psychology
+                </span>
+
+            </div>
+
+            <h3 class="text-base font-semibold text-white tracking-wide uppercase font-mono text-xs text-gray-300">
+                Decisões Complexas
+            </h3>
+
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Use automação e IA para apoiar análises e decisões.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- SERVIÇOS -->
+
+<section class="py-20 border-t border-outline-subtle/50" id="servicos">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+
+        <div>
+
+            <span class="text-xs font-mono text-blue-400 uppercase tracking-widest">
+                Catálogo de Competências
+            </span>
+
+            <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">
+                Serviços
+            </h2>
+
+        </div>
+
+        <p class="text-sm text-gray-400 max-w-md">
+            Soluções estruturadas para transformar a dinâmica operacional de times analíticos e comerciais.
+        </p>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="services-accordion-group">
+
+        <div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
+
+            <div>
+
+                <div class="flex items-center justify-between gap-3 mb-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+
+                            <span class="material-symbols-outlined">
+                                trending_up
+                            </span>
+
+                        </div>
+
+                        <h3 class="font-bold text-lg text-white">
+                            RevOps & Inteligência Comercial
+                        </h3>
+
+                    </div>
+
+                    <span class="text-xs font-mono text-gray-500">
+                        01
+                    </span>
+
+                </div>
+
+                <p class="text-sm text-gray-300 leading-relaxed mb-5">
+
+                    Estruturação de processos comerciais, CRM e indicadores para tornar a operação mais organizada e previsível.
+
+                </p>
+
+            </div>
+
+            <div class="border-t border-outline-subtle pt-4">
+
+                <span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">
+                    Escopo de atuação:
+                </span>
+
+                <div class="flex flex-wrap gap-2">
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Estruturação de processos comerciais
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        CRM e organização de pipeline
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Indicadores de vendas
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Funil comercial
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Automação de processos
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Integração Marketing, Vendas e CS
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Dashboards comerciais
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
+
+            <div>
+
+                <div class="flex items-center justify-between gap-3 mb-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+
+                            <span class="material-symbols-outlined">
+                                bar_chart
+                            </span>
+
+                        </div>
+
+                        <h3 class="font-bold text-lg text-white">
+                            Dados & Analytics
+                        </h3>
+
+                    </div>
+
+                    <span class="text-xs font-mono text-gray-500">
+                        02
+                    </span>
+
+                </div>
+
+                <p class="text-sm text-gray-300 leading-relaxed mb-5">
+
+                    Transformo dados espalhados em informações confiáveis para acompanhamento e tomada de decisão.
+
+                </p>
+
+            </div>
+
+            <div class="border-t border-outline-subtle pt-4">
+
+                <span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">
+                    Escopo de atuação:
+                </span>
+
+                <div class="flex flex-wrap gap-2">
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Decisões Inteligentes
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Dashboards executivos
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Modelagem de dados
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        ETL / ELT
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Integração de fontes
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        SQL
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Automação de relatórios
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        KPIs
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
+
+            <div>
+
+                <div class="flex items-center justify-between gap-3 mb-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+
+                            <span class="material-symbols-outlined">
+                                terminal
+                            </span>
+
+                        </div>
+
+                        <h3 class="font-bold text-lg text-white">
+                            Automação & Desenvolvimento
+                        </h3>
+
+                    </div>
+
+                    <span class="text-xs font-mono text-gray-500">
+                        03
+                    </span>
+
+                </div>
+
+                <p class="text-sm text-gray-300 leading-relaxed mb-5">
+
+                    Desenvolvo ferramentas e automações sob medida para eliminar tarefas repetitivas e melhorar processos internos.
+
+                </p>
+
+            </div>
+
+            <div class="border-t border-outline-subtle pt-4">
+
+                <span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">
+                    Escopo de atuação:
+                </span>
+
+                <div class="flex flex-wrap gap-2">
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Automação de processos
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Sistemas internos
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Aplicações web
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Integrações via API
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Ferramentas operacionais
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tech-card rounded-xl p-6 transition-all flex flex-col justify-between">
+
+            <div>
+
+                <div class="flex items-center justify-between gap-3 mb-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+
+                            <span class="material-symbols-outlined">
+                                neurology
+                            </span>
+
+                        </div>
+
+                        <h3 class="font-bold text-lg text-white">
+                            Inteligência Artificial
+                        </h3>
+
+                    </div>
+
+                    <span class="text-xs font-mono text-gray-500">
+                        04
+                    </span>
+
+                </div>
+
+                <p class="text-sm text-gray-300 leading-relaxed mb-5">
+
+                    Aplicação prática de IA para automatizar tarefas, analisar informações e apoiar decisões.
+
+                </p>
+
+            </div>
+
+            <div class="border-t border-outline-subtle pt-4">
+
+                <span class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">
+                    Escopo de atuação:
+                </span>
+
+                <div class="flex flex-wrap gap-2">
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Automação com IA
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Agentes e assistentes
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Análise inteligente de dados
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Classificação de informações
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Modelos preditivos
+                    </span>
+
+                    <span class="px-2.5 py-1 rounded bg-surface border border-outline-subtle text-xs text-gray-300">
+                        Integração de IA em processos
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-8 p-6 md:p-8 rounded-xl bg-gradient-to-r from-surface-variant to-surface border border-outline-subtle flex flex-col sm:flex-row items-center justify-between gap-6">
+
+        <div>
+
+            <h4 class="text-base sm:text-lg font-bold text-white">
+                Não encontrou exatamente o que procura?
+            </h4>
+
+            <p class="text-sm text-gray-300 mt-1">
+                Posso estruturar uma solução sob medida para o seu problema.
+            </p>
+
+        </div>
+
+        <a class="whitespace-nowrap inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-md shadow-blue-500/20"
+           href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es."
+           rel="noopener noreferrer"
+           target="_blank">
+
+            Fale comigo
+
+            <span class="material-symbols-outlined text-sm">
+                arrow_forward
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- PROJETOS -->
+
+<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]" id="projetos">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-14">
+
+        <span class="text-xs font-mono text-blue-400 uppercase tracking-widest">
+            Portfólio em Produção
+        </span>
+
+        <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">
+            Projetos
+        </h2>
+
+        <p class="text-sm sm:text-base text-gray-400 mt-2">
+            Casos de engenharia de dados, visualização analítica e inteligência aplicada.
+        </p>
+
+    </div>
+
+    <!--
+        ============================================================
+        DESTINO DOS PROJETOS
+        ============================================================
+
+        Os três cards levam para a mesma página:
+        Officer's Tools/index (1).html
+
+        O caminho está codificado para funcionar corretamente
+        no GitHub Pages.
+    -->
+
+    <script>
+        const PROJECT_PAGE = "./Officer's%20Tools/index%20(1).html";
+
+        function openProject() {
+            window.location.href = PROJECT_PAGE;
+        }
+    </script>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- CARD 1 — SISTEMA -->
+
+        <div class="tech-card rounded-xl overflow-hidden border border-outline-subtle flex flex-col group cursor-pointer"
+             onclick="openProject()"
+             role="button"
+             tabindex="0"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject()}">
+
+            <div class="relative overflow-hidden bg-black/40">
+
+                <img alt="Sistemas de Inteligência de Negócios"
+                     class="w-full h-56 object-cover object-top rounded-t-xl opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                     src="./Assets/Sistema.png">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-[#12151b] via-transparent to-transparent opacity-60"></div>
+
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow justify-between">
+
+                <div>
+
+                    <div class="flex items-center gap-2 mb-3">
+
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                            Analytics
+                        </span>
+
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            RevOps
+                        </span>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                        Sistemas de Inteligência de Negócios
+                    </h3>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Arquitetura de dados para monitoramento de KPIs comerciais em tempo real.
+                    </p>
+
+                </div>
+
+                <div class="flex-shrink-0">
+
+                    <div class="w-10 h-10 rounded-lg bg-surface border border-outline-subtle flex items-center justify-center text-gray-300 group-hover:text-white group-hover:border-blue-500/50 transition-colors">
+
+                        <span class="material-symbols-outlined text-base">
+                            arrow_forward
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 — AKINATOR / IA -->
+
+        <div class="tech-card rounded-xl overflow-hidden border border-outline-subtle flex flex-col group cursor-pointer"
+             onclick="openProject()"
+             role="button"
+             tabindex="0"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject()}">
+
+            <div class="relative overflow-hidden bg-black/40">
+
+                <img alt="Predição Inteligente com IA"
+                     class="w-full h-56 object-cover object-top rounded-t-xl opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                     src="./Assets/Akinator.png">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-[#12151b] via-transparent to-transparent opacity-60"></div>
+
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow justify-between">
+
+                <div>
+
+                    <div class="flex items-center gap-2 mb-3">
+
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                            IA
+                        </span>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                        Predição Inteligente com IA
+                    </h3>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Modelos preditivos para transformar dados históricos em insights para tomada de decisão.
+                    </p>
+
+                </div>
+
+                <div class="flex-shrink-0">
+
+                    <div class="w-10 h-10 rounded-lg bg-surface border border-outline-subtle flex items-center justify-center text-gray-300 group-hover:text-white group-hover:border-blue-500/50 transition-colors">
+
+                        <span class="material-symbols-outlined text-base">
+                            arrow_forward
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 — DASHBOARD -->
+
+        <div class="tech-card rounded-xl overflow-hidden border border-outline-subtle flex flex-col group cursor-pointer lg:col-span-2"
+             onclick="openProject()"
+             role="button"
+             tabindex="0"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProject()}">
+
+            <div class="relative overflow-hidden bg-black/40">
+
+                <img alt="Dashboards Operacionais"
+                     class="w-full h-64 object-cover object-top rounded-t-xl opacity-90 group-hover:opacity-100 group-hover:scale-[1.01] transition-all duration-500"
+                     src="./Assets/Dashboard.png">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-[#12151b] via-transparent to-transparent opacity-60"></div>
+
+            </div>
+
+            <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+                <div>
+
+                    <div class="flex items-center gap-2 mb-3">
+
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            Data Viz
+                        </span>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                        Dashboards Operacionais
+                    </h3>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Interfaces de acompanhamento de metas e performance de times corporativos.
+                    </p>
+
+                </div>
+
+                <div class="flex-shrink-0">
+
+                    <div class="w-10 h-10 rounded-lg bg-surface border border-outline-subtle flex items-center justify-center text-gray-300 group-hover:text-white group-hover:border-blue-500/50 transition-colors">
+
+                        <span class="material-symbols-outlined text-base">
+                            arrow_forward
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- COMO EU TRABALHO -->
+
+<section class="py-20 border-t border-outline-subtle/50" id="como-funciona">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-3xl mb-14">
+
+        <span class="text-xs font-mono text-blue-400 uppercase tracking-widest">
+            Método de Execução
+        </span>
+
+        <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">
+            Como eu trabalho
+        </h2>
+
+        <p class="text-sm sm:text-base text-gray-400 mt-2">
+            Um fluxo claro e direto para estruturar soluções escaláveis sem complexidade desnecessária.
+        </p>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+        <div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
+
+            <div>
+
+                <div class="text-xs font-mono text-blue-400 font-bold tracking-wider mb-2">
+                    01 — DIAGNÓSTICO
+                </div>
+
+                <h3 class="text-lg font-semibold text-white mb-2">
+                    Diagnóstico
+                </h3>
+
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Entendo o problema, os objetivos e os gargalos da operação.
+                </p>
+
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
+
+                <span class="material-symbols-outlined text-sm text-blue-400">
+                    search
+                </span>
+
+                Mapeamento & Requisitos
+
+            </div>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
+
+            <div>
+
+                <div class="text-xs font-mono text-emerald-400 font-bold tracking-wider mb-2">
+                    02 — ARQUITETURA
+                </div>
+
+                <h3 class="text-lg font-semibold text-white mb-2">
+                    Arquitetura
+                </h3>
+
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Analiso dados, processos e ferramentas e desenho a solução.
+                </p>
+
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
+
+                <span class="material-symbols-outlined text-sm text-emerald-400">
+                    schema
+                </span>
+
+                Modelagem & Fluxos
+
+            </div>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
+
+            <div>
+
+                <div class="text-xs font-mono text-amber-400 font-bold tracking-wider mb-2">
+                    03 — IMPLEMENTAÇÃO
+                </div>
+
+                <h3 class="text-lg font-semibold text-white mb-2">
+                    Implementação
+                </h3>
+
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Desenvolvo, integro, automatizo e coloco a solução em operação.
+                </p>
+
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
+
+                <span class="material-symbols-outlined text-sm text-amber-400">
+                    code
+                </span>
+
+                Build & Deploy
+
+            </div>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl relative flex flex-col justify-between">
+
+            <div>
+
+                <div class="text-xs font-mono text-indigo-400 font-bold tracking-wider mb-2">
+                    04 — EVOLUÇÃO
+                </div>
+
+                <h3 class="text-lg font-semibold text-white mb-2">
+                    Evolução
+                </h3>
+
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Acompanho a utilização e identifico oportunidades de melhoria.
+                </p>
+
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-outline-subtle text-gray-400 text-xs font-mono flex items-center gap-1.5">
+
+                <span class="material-symbols-outlined text-sm text-indigo-400">
+                    published_with_changes
+                </span>
+
+                Otimização Contínua
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- TECNOLOGIAS -->
+
+<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-3xl mb-12">
+
+        <span class="text-xs font-mono text-blue-400 uppercase tracking-widest">
+            Stack & Ecossistema
+        </span>
+
+        <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">
+            Tecnologias
+        </h2>
+
+        <p class="text-sm sm:text-base text-gray-400 mt-2">
+            Tecnologias que utilizo para transformar complexidade em ferramentas funcionais.
+        </p>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="tech-card p-6 rounded-xl">
+
+            <div class="flex items-center gap-2 mb-4">
+
+                <span class="material-symbols-outlined text-blue-400">
+                    database
+                </span>
+
+                <h3 class="font-bold text-base text-white">
+                    Dados
+                </h3>
+
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Power BI
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    SQL
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Python
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    ETL
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    APIs
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl">
+
+            <div class="flex items-center gap-2 mb-4">
+
+                <span class="material-symbols-outlined text-emerald-400">
+                    smart_toy
+                </span>
+
+                <h3 class="font-bold text-base text-white">
+                    Automação
+                </h3>
+
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Google Apps Script
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    N8N
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    APIs
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Workflows
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl">
+
+            <div class="flex items-center gap-2 mb-4">
+
+                <span class="material-symbols-outlined text-amber-400">
+                    code
+                </span>
+
+                <h3 class="font-bold text-base text-white">
+                    Desenvolvimento
+                </h3>
+
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    HTML
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    CSS
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    JavaScript
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Python
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="tech-card p-6 rounded-xl">
+
+            <div class="flex items-center gap-2 mb-4">
+
+                <span class="material-symbols-outlined text-indigo-400">
+                    psychology
+                </span>
+
+                <h3 class="font-bold text-base text-white">
+                    Inteligência Artificial
+                </h3>
+
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    LLMs
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Automação com IA
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Agentes
+                </span>
+
+                <span class="px-3 py-1 bg-surface rounded border border-outline-subtle text-xs font-mono text-gray-300">
+                    Análise inteligente
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- SOBRE MIM -->
+
+<section class="py-20 border-t border-outline-subtle/50" id="sobre">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <div class="lg:col-span-4 flex justify-center">
+
+            <div class="w-56 sm:w-64 aspect-[3/4] rounded-xl overflow-hidden border border-outline-subtle bg-surface shadow-lg">
+
+                <img alt="Dérik Deniel - Sobre Mim"
+                     class="w-full h-full object-cover grayscale contrast-105"
+                     src="./Assets/Eu.png">
+
+            </div>
+
+        </div>
+
+        <div class="lg:col-span-8">
+
+            <span class="text-xs font-mono text-blue-400 uppercase tracking-widest"></span>
+
+            <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1 mb-6">
+                Sobre mim
+            </h2>
+
+            <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-normal mb-8">
+
+                Sou Dérik Deniel, profissional focado na interseção entre negócios, dados e tecnologia. Meu trabalho consiste em entender problemas operacionais, estruturar dados e desenvolver soluções que tornam processos mais eficientes e informações mais úteis para a tomada de decisão. Minha atuação combina RevOps, Business Intelligence, análise de dados, automação, desenvolvimento e Inteligência Artificial.
+
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4">
+
+                <a class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-md shadow-blue-500/20"
+                   href="Assets/curriculo.pdf"
+                   rel="noopener noreferrer"
+                   target="_blank">
+
+                    <span class="material-symbols-outlined text-base">
+                        download
+                    </span>
+
+                    Baixar CV
+
+                </a>
+
+                <a class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-outline-subtle bg-surface hover:bg-surface-variant text-gray-200 hover:text-white font-medium text-sm transition-all"
+                   href="https://www.linkedin.com/in/d%C3%A9rik-almeida-5a421737a/"
+                   rel="noopener noreferrer"
+                   target="_blank">
+
+                    <span class="material-symbols-outlined text-base">
+                        open_in_new
+                    </span>
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- CTA FINAL -->
+
+<section class="py-20 border-t border-outline-subtle/50 bg-[#0d1015]" id="contato">
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+
+    <span class="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2">
+        Inicie uma conversa
+    </span>
+
+    <h2 class="text-2xl sm:text-4xl lg:text-4xl font-extrabold text-white tracking-tight">
+        Vamos transformar um problema em uma solução?
+    </h2>
+
+    <p class="text-base sm:text-lg text-gray-300 mt-4 max-w-2xl leading-relaxed">
+
+        Se você possui um processo manual, dados desorganizados ou uma operação que poderia ser mais eficiente, podemos conversar.
+
+    </p>
+
+    <div class="flex flex-wrap justify-center items-center gap-4 mt-8 w-full max-w-md">
+
+        <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-all shadow-lg shadow-emerald-600/20"
+           href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es."
+           rel="noopener noreferrer"
+           target="_blank">
+
+            <span class="material-symbols-outlined text-base">
+                chat
+            </span>
+
+            Fale comigo pelo WhatsApp
+
+            <span class="material-symbols-outlined text-sm">
+                arrow_forward
+            </span>
+
+        </a>
+
+        <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-outline-subtle bg-surface hover:bg-surface-variant text-gray-200 hover:text-white font-medium text-sm transition-all"
+           href="mailto:derikdenielalm@gmail.com?subject=Quero%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o&body=Ol%C3%A1%2C%20D%C3%A9rik%21%0A%0AVi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o.">
+
+            <span class="material-symbols-outlined text-base">
+                mail
+            </span>
+
+            Envie um e-mail
+
+            <span class="material-symbols-outlined text-sm">
+                arrow_forward
+            </span>
+
+        </a>
+
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-outline-subtle/60 flex items-center gap-2 text-sm text-gray-400 font-mono">
+
+        <span class="material-symbols-outlined text-sm text-gray-500">
+            alternate_email
+        </span>
+
+        <a class="hover:text-blue-400 transition-colors"
+           href="mailto:derikdenielalm@gmail.com?subject=Quero%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o&body=Ol%C3%A1%2C%20D%C3%A9rik%21%0A%0AVi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o.">
+
+            derikdenielalm@gmail.com
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="border-t border-outline-subtle bg-[#080a0d] py-10">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+
+    <div class="flex flex-col items-center md:items-start gap-1">
+
+        <span class="text-base font-bold text-white tracking-tight">
+            Dérik Deniel
+        </span>
+
+        <span class="text-xs font-mono text-gray-400">
+            RevOps • Data & Analytics • Automação • IA
+        </span>
+
+    </div>
+
+    <div class="flex items-center gap-6 text-sm text-gray-400 font-mono">
+
+        <a class="hover:text-white transition-colors"
+           href="mailto:derikdenielalm@gmail.com?subject=Quero%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o&body=Ol%C3%A1%2C%20D%C3%A9rik%21%0A%0AVi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20minha%20opera%C3%A7%C3%A3o.">
+            E-mail
+        </a>
+
+        <a class="hover:text-white transition-colors"
+           href="https://www.linkedin.com/in/d%C3%A9rik-almeida-5a421737a/"
+           rel="noopener noreferrer"
+           target="_blank">
+            LinkedIn
+        </a>
+
+        <a class="hover:text-white transition-colors"
+           href="https://wa.me/5511953101971?text=Ol%C3%A1%21%20Vi%20seu%20site%20e%20gostaria%20de%20marcar%20uma%20conversa%20para%20te%20explicar%20alguns%20problemas%20da%20minha%20opera%C3%A7%C3%A3o%20e%20entender%20como%20podemos%20transform%C3%A1-los%20em%20solu%C3%A7%C3%B5es."
+           rel="noopener noreferrer"
+           target="_blank">
+            WhatsApp
+        </a>
+
+    </div>
+
+    <div class="text-xs text-gray-400 font-mono">
+        © 2026 Dérik Deniel. Todos os direitos reservados.
+    </div>
+
+</div>
+
 </footer>
-<!-- Lightbox Modal para Inspeção dos Dashboards -->
-<div class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4" id="project-modal">
-<div class="relative max-w-5xl w-full bg-[#11141a] border border-outline-subtle rounded-2xl overflow-hidden shadow-2xl flex flex-col">
-<div class="p-4 border-b border-outline-subtle flex justify-between items-center">
-<h4 class="text-base font-bold text-white font-mono" id="modal-title">Dashboard Preview</h4>
-<button class="p-1 text-gray-400 hover:text-white rounded-lg hover:bg-surface transition-colors" onclick="closeImageModal()">
-<span class="material-symbols-outlined text-xl">close</span>
-</button>
-</div>
-<div class="p-2 max-h-[80vh] overflow-auto flex items-center justify-center">
-<img alt="Projeto em Detalhe" class="w-full h-auto rounded-lg object-contain" id="modal-image" src="">
-</div>
-</div>
-</div>
+
+<!-- JAVASCRIPT -->
+
 <script>
-    // Menu mobile responsivo
+
+    // ============================================================
+    // MENU MOBILE
+    // ============================================================
+
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
 
     if (mobileMenuBtn && mobileMenu) {
+
         mobileMenuBtn.addEventListener('click', () => {
+
             const isHidden = mobileMenu.classList.contains('hidden');
+
             if (isHidden) {
+
                 mobileMenu.classList.remove('hidden');
                 mobileMenu.classList.add('flex');
                 menuIcon.textContent = 'close';
+
             } else {
+
                 mobileMenu.classList.add('hidden');
                 mobileMenu.classList.remove('flex');
                 menuIcon.textContent = 'menu';
+
             }
+
         });
 
-        // Fechar ao clicar em item
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
+
             link.addEventListener('click', () => {
+
                 mobileMenu.classList.add('hidden');
                 mobileMenu.classList.remove('flex');
                 menuIcon.textContent = 'menu';
+
             });
+
         });
+
     }
 
-    // Modal de Imagem dos Projetos
-    function openImageModal(imgSrc, title) {
-        const modal = document.getElementById('project-modal');
-        const modalImg = document.getElementById('modal-image');
-        const modalTitle = document.getElementById('modal-title');
-        
-        if (modal && modalImg && modalTitle) {
-            modalImg.src = imgSrc;
-            modalTitle.textContent = title;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    function closeImageModal() {
-        const modal = document.getElementById('project-modal');
-        if (modal) {
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    // Fechar modal ao clicar fora ou Esc
-    const modalElement = document.getElementById('project-modal');
-    if (modalElement) {
-        modalElement.addEventListener('click', (e) => {
-            if (e.target === modalElement) {
-                closeImageModal();
-            }
-        });
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeImageModal();
-        }
-    });
 </script>
 
-
-</body></html>
+</body>
+</html>
